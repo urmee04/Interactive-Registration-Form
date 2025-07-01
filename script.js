@@ -1,3 +1,7 @@
+// Load User Name from localStorage
+
+let userName = JSON.parse(localStorage.getItem("username")) || "";
+
 // Wait for DOM to be fully loaded
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -35,6 +39,10 @@ document.addEventListener("DOMContentLoaded", function () {
         email: emailInput.value.trim(),
         password: passwordInput.value,
       };
+      // Store the username in localStorage so it can be pre-filled on page reload
+
+      localStorage.setItem("username", formData.username);
+
       // Simulate form submission and
       console.log("Form submitted:", formData);
       alert("Account created successfully!");
