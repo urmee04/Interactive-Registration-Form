@@ -1,6 +1,8 @@
 ### Lab-5.2: Interactive User Registration Form
 
-This lab is an **_interactive user registration form_** built using HTML, CSS, and JavaScript. It demonstrates DOM manipulation, event handling, form validation, and localStorage through an interactive user registration form with real-time input feedback.
+This lab is an interactive user registration form built using HTML, CSS, and JavaScript. It demonstrates DOM manipulation, event handling, form validation, and localStorage through an interactive user registration form with real-time input feedback.
+
+---
 
 #### Objectives
 
@@ -22,11 +24,13 @@ This lab covers the bellow mentioned areas:
 
 Create a new project folder named interactive-registration-form, and inside it:
 
+```
 interactive-registration-form/
 │
 ├── index.html
 ├── styles.css
 └── script.js
+```
 
 #### Tech Stack
 
@@ -51,14 +55,17 @@ interactive-registration-form/
 
 - The entered username will be automatically saved and restored using your browser’s localStorage.
 
+---
+
 ##### Reflection questions
 
-**How did event.preventDefault() help in handling form submission?**
+**1. How did event.preventDefault() help in handling form submission?**
+
 Normally, when a form is submitted, the browser sends the to the server and refreshes the page.`event.preventDefault()` stops this defaut behavior, allowing us to handle the submission. By preventing the default submission, we can first validate all form fields (username, email, password, confirm password) before proceeding. The code checks each field's validity with functions like `validateUsername()`, `validateEmail()`, etc. and only if all validation pass `(isUsernameValid && isEmailValid && isPasswordValid && isConfirmPasswordValid)`, the code process the form data. Otherwise, the form won't submit and users see error messages. After successfull validation, the code creates a `formData` object, logs it to console, shows a success alert and resets the form without a page refresh.
 
 Without `event.preventDefault()`, the form would submit immediately regardless of validation results, potentially sending invalid data to the server and causing a page refresh that would disrupt the user experience.
 
-**What is the difference between using HTML5 validation attributes and JavaScript-based validation? Why might you use both?**
+**2. What is the difference between using HTML5 validation attributes and JavaScript-based validation? Why might you use both?**
 
 1. HTML5 validation attributes
 
@@ -83,7 +90,8 @@ In my code, I am using HTML5 attributes as a basic layer of validation, while th
 
 The `novalidate` attribute on the form tells the browser to skip its native validation since JS is handling the validation, though I could also choose to use both in parallel.
 
-**Explain how you used localStorage to persist and retrieve the username. What are the limitations of localStorage for storing sensitive data?**
+**3. Explain how you used localStorage to persist and retrieve the username. What are the limitations of localStorage for storing sensitive data?**
+
 In code, I used `localstorage` to provide a better user experience by remembering the username accross page reloads.
 
 1. Storing the Username
@@ -116,7 +124,7 @@ Storing sensitive data like passwords, session tokens, or personal information i
 
 - Vulnerability to Cross-Site Scripting (XSS): This is the most significant risk. If an attacker can inject a malicious script into the webpage (an XSS attack), that script runs with the same permissions as your own JavaScript code. This means the attacker's script has full access to read, modify, or steal any data stored in localStorage, sending it to their own servers without the user's knowledge.
 
-**Describe a challenge you faced in implementing the real-time validation and how you solved it.**
+**4. Describe a challenge you faced in implementing the real-time validation and how you solved it.**
 
 One challenge I faced while implementing real-time validation was ensuring that the error messages were correctly displayed and cleared at the right time. Initially, I noticed that even after fixing an input mistake, the error message would sometimes still appear or not update immediately.
 
@@ -126,7 +134,8 @@ For example, in the `validateEmail()` function, I used a regular expression to v
 
 I also added `input` event listeners to each field so that validation would trigger as the user typed, rather than only on form submission. This improved the responsiveness of the form and aligned with best practices for user experience.
 
-**How did you ensure that custom error messages were user-friendly and displayed at the appropriate times?**
+**5. How did you ensure that custom error messages were user-friendly and displayed at the appropriate times?**
+
 To ensure custom error messages were user-friendly and displayed at the appropriate times, I implemented real-time validation using input event listeners on each form field. This allowed the form to provide immediate feedback as the user typed, which improves usability and helps catch errors early.
 
 For example:
@@ -143,7 +152,7 @@ For example:
 
 Additionally, I prevented form submission unless all validations were successful, ensuring errors were shown during submission if any fields remained invalid. This two-step validation (real-time + on-submit) ensured that users were guided in a supportive and non-intrusive way throughout the form interaction.
 
-##### Resources used
+#### Resources used
 
 - localStorage:
 
