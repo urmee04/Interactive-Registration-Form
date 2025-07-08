@@ -192,6 +192,3 @@ Additionally, I prevented form submission unless all validations were successful
 
 [submit event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/submit_event)
 
-- Toggle Password Visibility:
-
-[Toggle Password](https://www.javascripttutorial.net/javascript-dom/javascript-toggle-password-visibility/)
