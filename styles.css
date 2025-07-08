@@ -86,14 +86,6 @@ button[type="submit"]:hover {
 }
 
 .password-wrapper input {
-  width: 100%; /* Make input fill the wrapper */
-  padding-right: 40px; /* Space for the icon */
-}
-.password-toggle-icon {
-  position: absolute;
-  right: 35px;
-  top: 50%;
-  transform: translateY(-50%);
-  cursor: pointer;
-  color: #555;
+  width: 100%;
+  padding-right: 40px;
 }
